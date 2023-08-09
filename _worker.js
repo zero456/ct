@@ -6,7 +6,7 @@ import { connect } from 'cloudflare:sockets';
 // [Windows] Press "Win + R", input cmd and run:  Powershell -NoExit -Command "[guid]::NewGuid()"
 let userID = '86CC7ECE-8B71-4346-B810-454C5324D27F';
 
-const proxyIPs = ['cdn-all.xn--b6gac.eu.org', 'cdn.xn--b6gac.eu.org', 'cdn-b100.xn--b6gac.eu.org', 'edgetunnel.anycast.eu.org', 'cdn.anycast.eu.org'];
+const proxyIPs = ['138.2.232.253', '152.70.85.122', 'cdn-b100.xn--b6gac.eu.org', 'edgetunnel.anycast.eu.org', 'cdn.anycast.eu.org'];
 let proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
 
 let dohURL = 'https://sky.rethinkdns.com/1:-Pf_____9_8A_AMAIgE8kMABVDDmKOHTAKg='; // https://cloudflare-dns.com/dns-query or https://dns.google/dns-query
@@ -101,7 +101,7 @@ export default {
                     default:
                         // return new Response('Not found', { status: 404 });
                         // For any other path, reverse proxy to 'maimai.sega.jp' and return the original response
-                        url.hostname = 'maimai.sega.jp';
+                        url.hostname = 'www.baidu.com';
                         url.protocol = 'https:';
                         request = new Request(url, request);
                         return await fetch(request);
